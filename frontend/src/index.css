@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0E0B;
+    background-image: radial-gradient(rgba(40, 53, 40, 0.25) 1px, transparent 1px), radial-gradient(rgba(40, 53, 40, 0.15) 1px, #0B0E0B 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    color: #E2E8F0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #121712;
+}
+::-webkit-scrollbar-thumb {
+  background: #283528;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #607F35;
+}
+
+/* Tactical Crosshairs & Grid Badges */
+.tactical-panel {
+  background-color: #141A14;
+  border: 1px solid #243024;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+.tactical-panel-hover {
+  transition: all 0.2s ease-in-out;
+}
+.tactical-panel-hover:hover {
+  border-color: #4B6329;
+  background-color: #182018;
+}
+
+/* Status Indicator Pulses */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.15); }
+}
+
+.pulse-live {
+  animation: pulse-slow 2.5s infinite ease-in-out;
+}
+
+/* Leaflet Dark Filter for Tactical Military Feel */
+.leaflet-container {
+  background: #0B0E0B !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.leaflet-tile {
+  filter: brightness(0.65) invert(1) contrast(3) hue-rotate(200deg) saturate(0.35);
+}
